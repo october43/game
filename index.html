@@ -3,20 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <title>قفل الألغاز</title>
-</head>
-<body style="text-align: center; font-family: Arial; direction: rtl; padding: 20px;">
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Arial', sans-serif;
+      direction: rtl;
+      padding: 30px;
+      background: linear-gradient(to bottom right, #f0f4ff, #dbe9ff);
+      color: #333;
+    }
 
-  <h2>أدخل الرقم السري للدخول على الاسئلة</h2>
-  <input type="password" id="code" maxlength="4" placeholder="****" style="font-size: 24px; text-align: center;">
+    h2 {
+      font-size: 28px;
+      color: #2c3e50;
+    }
+
+    input[type="password"] {
+      font-size: 24px;
+      width: 120px;
+      padding: 10px;
+      text-align: center;
+      border: 2px solid #3498db;
+      border-radius: 8px;
+      outline: none;
+      margin-top: 10px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #message {
+      margin-top: 15px;
+      color: red;
+      font-weight: bold;
+    }
+
+    .hint {
+      background-color: #ffffffcc;
+      border-radius: 10px;
+      padding: 20px;
+      display: inline-block;
+      margin-top: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .hint h3 {
+      color: #555;
+    }
+
+    .hint p {
+      text-align: right;
+      font-size: 18px;
+      margin: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>أدخل الرقم السري للدخول</h2>
+  <input type="password" id="code" maxlength="4" placeholder="****">
   <br><br>
   <button onclick="checkCode()">دخول</button>
-  <p id="message" style="color: red;"></p>
+  <p id="message"></p>
 
-  <hr>
-
-  <h3>💡 تلميحة: كل لغز يعطي رقم، اجمعهم بالترتيب لتحصل على الرمز</h3>
-
-  <div style="text-align: right; display: inline-block;">
+  <div class="hint">
+    <h3>💡 تلميحة: كل لغز يعطي رقم، اجمعهم بالترتيب لتحصل على الرمز</h3>
     <p>1. كم عدد أرجل العنكبوت؟</p>
     <p>2. كم عدد أيام الأسبوع؟</p>
     <p>3. كم عدد أصابع اليد الواحدة؟</p>
@@ -24,7 +88,7 @@
   </div>
 
   <script>
-    const correctCode = "8753"; // هذا الرمز مبني على حلول الألغاز
+    const correctCode = "8753";
 
     function checkCode() {
       const userCode = document.getElementById("code").value;
