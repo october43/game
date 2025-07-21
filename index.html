@@ -2,19 +2,29 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>قفل الصفحة</title>
+  <title>قفل الألغاز</title>
 </head>
-<body style="text-align: center; font-family: Arial;">
+<body style="text-align: center; font-family: Arial; direction: rtl; padding: 20px;">
 
-  <h2>أدخل الرقم السري للدخول</h2>
+  <h2>أدخل الرقم السري للدخول على الاسئلة</h2>
   <input type="password" id="code" maxlength="4" placeholder="****" style="font-size: 24px; text-align: center;">
   <br><br>
   <button onclick="checkCode()">دخول</button>
-
   <p id="message" style="color: red;"></p>
 
+  <hr>
+
+  <h3>💡 تلميحة: كل لغز يعطي رقم، اجمعهم بالترتيب لتحصل على الرمز</h3>
+
+  <div style="text-align: right; display: inline-block;">
+    <p>1. كم عدد أرجل العنكبوت؟</p>
+    <p>2. كم عدد أيام الأسبوع؟</p>
+    <p>3. كم عدد أصابع اليد الواحدة؟</p>
+    <p>4. كم عدد الحروف في كلمة "قمر"؟</p>
+  </div>
+
   <script>
-    const correctCode = "2025"; // تقدر تغير الرمز هنا
+    const correctCode = "8753"; // هذا الرمز مبني على حلول الألغاز
 
     function checkCode() {
       const userCode = document.getElementById("code").value;
