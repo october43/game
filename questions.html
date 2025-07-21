@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>أسئلة متعددة الاختيارات</title>
+  <title>أسئلة إسلامية - مسابقة</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -81,35 +81,35 @@
 </head>
 <body>
 
-  <h2>اختر الإجابة الصحيحة لكل سؤال</h2>
+  <h2>أجب عن الأسئلة التالية</h2>
 
   <div class="question-box">
     <div class="question">
-      <p>1. ما اسم عاصمة السعودية؟</p>
-      <label><input type="radio" name="q1" value="الرياض"> الرياض</label>
-      <label><input type="radio" name="q1" value="جدة"> جدة</label>
-      <label><input type="radio" name="q1" value="الدمام"> الدمام</label>
+      <p>1. في أي غزوة وقعت حادثة الإفك؟</p>
+      <label><input type="radio" name="q1" value="غزوة بدر"> غزوة بدر</label>
+      <label><input type="radio" name="q1" value="غزوة أحد"> غزوة أحد</label>
+      <label><input type="radio" name="q1" value="غزوة المريسيع"> غزوة المريسيع</label>
     </div>
 
     <div class="question">
-      <p>2. كم عدد أركان الإسلام؟</p>
-      <label><input type="radio" name="q2" value="4"> 4</label>
-      <label><input type="radio" name="q2" value="5"> 5</label>
-      <label><input type="radio" name="q2" value="6"> 6</label>
+      <p>2. في أي سنة وقعت غزوة تبوك؟</p>
+      <label><input type="radio" name="q2" value="السنة السابعة للهجرة"> السنة السابعة للهجرة</label>
+      <label><input type="radio" name="q2" value="السنة التاسعة للهجرة"> السنة التاسعة للهجرة</label>
+      <label><input type="radio" name="q2" value="السنة العاشرة للهجرة"> السنة العاشرة للهجرة</label>
     </div>
 
     <div class="question">
-      <p>3. ما ترتيب سورة الفاتحة في المصحف؟</p>
-      <label><input type="radio" name="q3" value="1"> 1</label>
-      <label><input type="radio" name="q3" value="2"> 2</label>
-      <label><input type="radio" name="q3" value="5"> 5</label>
+      <p>3. من كتب الصلح بين النبي ﷺ وبين المشركين يوم الحديبية؟</p>
+      <label><input type="radio" name="q3" value="علي بن أبي طالب"> علي بن أبي طالب</label>
+      <label><input type="radio" name="q3" value="عمر بن الخطاب"> عمر بن الخطاب</label>
+      <label><input type="radio" name="q3" value="عثمان بن عفان"> عثمان بن عفان</label>
     </div>
 
     <div class="question">
-      <p>4. من هو أول نبي؟</p>
-      <label><input type="radio" name="q4" value="آدم"> آدم</label>
-      <label><input type="radio" name="q4" value="نوح"> نوح</label>
-      <label><input type="radio" name="q4" value="إبراهيم"> إبراهيم</label>
+      <p>4. فكرة حفر الخندق في غزوة الأحزاب (الخندق) تعود إلى الصحابي:</p>
+      <label><input type="radio" name="q4" value="سلمان الفارسي"> سلمان الفارسي</label>
+      <label><input type="radio" name="q4" value="أبو بكر الصديق"> أبو بكر الصديق</label>
+      <label><input type="radio" name="q4" value="الزبير بن العوام"> الزبير بن العوام</label>
     </div>
 
     <button onclick="checkAnswers()">تحقق من الإجابات</button>
@@ -121,10 +121,10 @@
 
   <script>
     const correctAnswers = {
-      q1: "الرياض",
-      q2: "5",
-      q3: "1",
-      q4: "آدم"
+      q1: "غزوة المريسيع",
+      q2: "السنة التاسعة للهجرة",
+      q3: "علي بن أبي طالب",
+      q4: "سلمان الفارسي"
     };
 
     function checkAnswers() {
