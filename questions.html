@@ -96,4 +96,82 @@
       background-color: #fff3cd;
       color: #856404;
       padding: 15px;
-      border-radius
+      border-radius: 10px;
+      border: 1px solid #ffeeba;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>أجب عن الأسئلة التالية</h2>
+
+  <div class="question-box">
+    <div class="question">
+      <p>1. في أي غزوة وقعت حادثة الإفك؟</p>
+      <label><input type="radio" name="q1" value="غزوة بدر"> غزوة بدر</label>
+      <label><input type="radio" name="q1" value="غزوة أحد"> غزوة أحد</label>
+      <label><input type="radio" name="q1" value="غزوة المريسيع"> غزوة المريسيع</label>
+    </div>
+
+    <div class="question">
+      <p>2. في أي سنة وقعت غزوة تبوك؟</p>
+      <label><input type="radio" name="q2" value="السنة السابعة للهجرة"> السنة السابعة للهجرة</label>
+      <label><input type="radio" name="q2" value="السنة التاسعة للهجرة"> السنة التاسعة للهجرة</label>
+      <label><input type="radio" name="q2" value="السنة العاشرة للهجرة"> السنة العاشرة للهجرة</label>
+    </div>
+
+    <div class="question">
+      <p>3. من كتب الصلح بين النبي ﷺ وبين المشركين يوم الحديبية؟</p>
+      <label><input type="radio" name="q3" value="علي بن أبي طالب"> علي بن أبي طالب</label>
+      <label><input type="radio" name="q3" value="عمر بن الخطاب"> عمر بن الخطاب</label>
+      <label><input type="radio" name="q3" value="عثمان بن عفان"> عثمان بن عفان</label>
+    </div>
+
+    <div class="question">
+      <p>4. فكرة حفر الخندق في غزوة الأحزاب (الخندق) تعود إلى الصحابي:</p>
+      <label><input type="radio" name="q4" value="سلمان الفارسي"> سلمان الفارسي</label>
+      <label><input type="radio" name="q4" value="أبو بكر الصديق"> أبو بكر الصديق</label>
+      <label><input type="radio" name="q4" value="الزبير بن العوام"> الزبير بن العوام</label>
+    </div>
+
+    <button onclick="checkAnswers()">تحقق من الإجابات</button>
+    <div class="result" id="result"></div>
+    <p id="note">
+      📸 بعد الانتهاء من الحل، يرجى تصوير الشاشة وإرسالها عبر الواتساب.
+    </p>
+  </div>
+
+  <script>
+    const correctAnswers = {
+      q1: "غزوة المريسيع",
+      q2: "السنة التاسعة للهجرة",
+      q3: "علي بن أبي طالب",
+      q4: "سلمان الفارسي"
+    };
+
+    function checkAnswers() {
+      let resultHTML = "";
+      let allCorrect = true;
+
+      for (let q in correctAnswers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected) {
+          if (selected.value === correctAnswers[q]) {
+            resultHTML += `✅ ${q}: <span class="correct">صحيح</span><br>`;
+          } else {
+            resultHTML += `❌ ${q}: <span class="wrong">خطأ (الإجابة الصحيحة: ${correctAnswers[q]})</span><br>`;
+            allCorrect = false;
+          }
+        } else {
+          resultHTML += `❌ ${q}: <span class="wrong">لم يتم اختيار إجابة</span><br>`;
+          allCorrect = false;
+        }
+      }
+
+      document.getElementById("result").innerHTML = resultHTML;
+      document.getElementById("note").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
