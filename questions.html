@@ -103,7 +103,7 @@
 </head>
 <body>
 
-  <h2>أجيبي عن الأسئلة التالية</h2>
+  <h2>أجب عن الأسئلة التالية</h2>
 
   <div class="question-box">
     <div class="question">
@@ -159,7 +159,7 @@
           if (selected.value === correctAnswers[q]) {
             resultHTML += `✅ ${q}: <span class="correct">صحيح</span><br>`;
           } else {
-            resultHTML += `❌ ${q}: <span class="wrong">خطأ (الإجابة الصحيحة: ${correctAnswers[q]})</span><br>`;
+            resultHTML += `❌ ${q}: <span class="wrong">خطأ</span><br>`;
             allCorrect = false;
           }
         } else {
