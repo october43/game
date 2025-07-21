@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>قفل الصفحة</title>
+</head>
+<body style="text-align: center; font-family: Arial;">
+
+  <h2>أدخل الرقم السري للدخول</h2>
+  <input type="password" id="code" maxlength="4" placeholder="****" style="font-size: 24px; text-align: center;">
+  <br><br>
+  <button onclick="checkCode()">دخول</button>
+
+  <p id="message" style="color: red;"></p>
+
+  <script>
+    const correctCode = "2025"; // تقدر تغير الرمز هنا
+
+    function checkCode() {
+      const userCode = document.getElementById("code").value;
+      if (userCode === correctCode) {
+        window.location.href = "questions.html";
+      } else {
+        document.getElementById("message").innerText = "الرمز غير صحيح";
+      }
+    }
+  </script>
+
+</body>
+</html>
