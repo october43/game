@@ -1,102 +1,179 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>قفل الغزوات</title>
+  <title>مسابقة إسلامية</title>
   <style>
     body {
-      text-align: center;
-      font-family: 'Arial', sans-serif;
+      font-family: 'Tahoma', sans-serif;
       direction: rtl;
-      padding: 30px;
-      background: linear-gradient(to bottom right, #f0f4ff, #dbe9ff);
-      color: #333;
-    }
-
-    h2 {
-      font-size: 28px;
+      text-align: center;
+      padding: 40px;
+      background: #f5f9ff;
       color: #2c3e50;
     }
 
-    input[type="password"] {
-      font-size: 24px;
-      width: 120px;
-      padding: 10px;
-      text-align: center;
-      border: 2px solid #3498db;
+    h2 {
+      font-size: 30px;
+      margin-bottom: 25px;
+      color: #1a237e;
+    }
+
+    .question-box {
+      display: inline-block;
+      text-align: right;
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 14px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .question {
+      margin-bottom: 30px;
+    }
+
+    .question p {
+      font-size: 20px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    label {
+      display: block;
+      padding: 10px 15px;
+      margin-bottom: 6px;
+      background-color: #f0f4ff;
+      border: 1px solid #d0d8f0;
       border-radius: 8px;
-      outline: none;
-      margin-top: 10px;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+
+    label:hover {
+      background-color: #e2ecff;
+    }
+
+    input[type="radio"] {
+      margin-left: 10px;
     }
 
     button {
-      font-size: 20px;
-      padding: 10px 20px;
-      margin-top: 20px;
-      background-color: #3498db;
+      margin-top: 15px;
+      padding: 12px 28px;
+      font-size: 18px;
+      background-color: #1976d2;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       transition: background 0.3s;
     }
 
     button:hover {
-      background-color: #2980b9;
+      background-color: #1565c0;
     }
 
-    #message {
-      margin-top: 15px;
-      color: red;
+    .result {
+      margin-top: 25px;
+      font-size: 18px;
       font-weight: bold;
     }
 
-    .hint {
-      background-color: #ffffffcc;
-      border-radius: 10px;
-      padding: 20px;
-      display: inline-block;
+    .correct {
+      color: green;
+    }
+
+    .wrong {
+      color: red;
+    }
+
+    #note {
+      display: none;
       margin-top: 30px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .hint h3 {
-      color: #555;
-    }
-
-    .hint p {
-      text-align: right;
       font-size: 18px;
-      margin: 8px 0;
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #ffeeba;
     }
   </style>
 </head>
 <body>
 
-  <h2>🔐 أدخل الرقم السري للدخول إلى الأسئلة</h2>
-  <input type="password" id="code" maxlength="4" placeholder="****">
-  <br><br>
-  <button onclick="checkCode()">دخول</button>
-  <p id="message"></p>
+  <h2>📘 أجب عن الأسئلة التالية</h2>
+<p style="color:#c62828; font-weight:bold; font-size:18px;">⚠️ تنبيه: هذه المسابقة فردية ويُمنع التعاون</p>
 
-  <div class="hint">
-    <h3>💡 التلميحات: كل سؤال يعطي رقم من رقم القفل</h3>
-    <p>1. في أي سنة هجرية وقعت غزوة بدر الكبرى؟</p> <!-- 2 -->
-    <p>2. في أي سنة هجرية وقعت غزوة أحد؟</p>         <!-- 3 -->
-    <p>3. في أي سنة وقعت غزوة الخندق؟</p>            <!-- 5 -->
-    <p>4. في أي سنة تم فتح مكة؟</p>                   <!-- 8 -->
+  
+    <div class="question-box">
+      <div class="question">
+        <p>📝 اكتب اسمك الكامل:</p>
+        <input type="text" id="username" placeholder="مثال: محمد أحمد" style="width: 100%; padding: 10px; font-size: 18px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 30px;">
+      </div>
+    
+    <div class="question">
+      <p>1. من هو الصحابي الذي قال له النبي ﷺ: "لو قلت بسم الله، لرفعتك الملائكة والناس ينظرون"؟</p>
+      <label><input type="radio" name="q1" value="الزبير بن العوام"> الزبير بن العوام</label>
+      <label><input type="radio" name="q1" value="طلحة بن عبيد الله"> طلحة بن عبيد الله</label>
+      <label><input type="radio" name="q1" value="عبد الله بن مسعود"> عبد الله بن مسعود</label>
+    </div>
+
+    <div class="question">
+      <p>2. في أي موقف قال النبي ﷺ: "أنا النبي لا كذب، أنا ابن عبد المطلب"؟</p>
+      <label><input type="radio" name="q2" value="غزوة بدر"> غزوة بدر</label>
+      <label><input type="radio" name="q2" value="فتح مكة"> فتح مكة</label>
+      <label><input type="radio" name="q2" value="غزوة حُنين"> غزوة حُنين</label>
+    </div>
+
+    <div class="question">
+      <p>3. من هي الصحابية التي أشارت على النبي ﷺ في صلح الحديبية بأن لا يُكلم أحدًا، بل يبدأ بنحر بُدنِه؟</p>
+      <label><input type="radio" name="q3" value="أم سلمة"> أم سلمة</label>
+      <label><input type="radio" name="q3" value="عائشة"> عائشة</label>
+      <label><input type="radio" name="q3" value="حفصة"> حفصة</label>
+    </div>
+
+    <div class="question">
+      <p>4. بعد استشهاد القادة الثلاثة في غزوة مؤتة، من تولى قيادة الجيش؟</p>
+      <label><input type="radio" name="q4" value="سعد بن أبي وقاص"> سعد بن أبي وقاص</label>
+      <label><input type="radio" name="q4" value="خالد بن الوليد"> خالد بن الوليد</label>
+      <label><input type="radio" name="q4" value="أبو عبيدة بن الجراح"> أبو عبيدة بن الجراح</label>
+    </div>
+
+    <button onclick="checkAnswers()">تحقق من الإجابات</button>
+    <div class="result" id="result"></div>
+    <p id="note">
+      📸 بعد الانتهاء من الحل، يرجى تصوير الشاشة وإرسالها عبر الواتساب.
+    </p>
   </div>
 
   <script>
-    const correctCode = "2358";
+    const correctAnswers = {
+      q1: "طلحة بن عبيد الله",
+      q2: "غزوة حُنين",
+      q3: "أم سلمة",
+      q4: "خالد بن الوليد"
+    };
 
-    function checkCode() {
-      const userCode = document.getElementById("code").value;
-      if (userCode === correctCode) {
-        window.location.href = "questions.html";
-      } else {
-        document.getElementById("message").innerText = "❌ الرقم غير صحيح، حاول مرة أخرى.";
+    function checkAnswers() {
+      let resultHTML = "";
+      for (let i = 1; i <= 4; i++) {
+        const q = `q${i}`;
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected) {
+          if (selected.value === correctAnswers[q]) {
+            resultHTML += `✅ سؤال ${i}: <span class="correct">إجابة صحيحة</span><br>`;
+          } else {
+            resultHTML += `❌ سؤال ${i}: <span class="wrong">إجابة خاطئة</span><br>`;
+          }
+        } else {
+          resultHTML += `❌ سؤال ${i}: <span class="wrong">لم يتم اختيار إجابة</span><br>`;
+        }
       }
+      document.getElementById("result").innerHTML = resultHTML;
+      document.getElementById("note").style.display = "block";
     }
   </script>
 
