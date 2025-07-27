@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>أسئلة إسلامية - مسابقة</title>
+  <title>مسابقة إسلامية</title>
   <style>
     body {
       font-family: 'Tahoma', sans-serif;
@@ -26,7 +26,7 @@
       padding: 30px 40px;
       border-radius: 14px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      max-width: 600px;
+      max-width: 700px;
       width: 100%;
     }
 
@@ -55,8 +55,17 @@
       background-color: #e2ecff;
     }
 
-    input[type="radio"] {
+    input[type="radio"], input[type="text"] {
       margin-left: 10px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin-bottom: 30px;
     }
 
     button {
@@ -103,35 +112,41 @@
 </head>
 <body>
 
-  <h2>أجيبي عن الأسئلة التالية</h2>
+  <h2>📘 أجيبي عن الأسئلة التالية</h2>
 
   <div class="question-box">
+
     <div class="question">
-      <p>1. في أي غزوة وقعت حادثة الإفك؟</p>
-      <label><input type="radio" name="q1" value="غزوة بدر"> غزوة بدر</label>
-      <label><input type="radio" name="q1" value="غزوة أحد"> غزوة أحد</label>
-      <label><input type="radio" name="q1" value="غزوة المريسيع"> غزوة المريسيع</label>
+      <p>📝  الاسم :</p>
+      <input type="text" id="username" placeholder=>
     </div>
 
     <div class="question">
-      <p>2. في أي سنة وقعت غزوة تبوك؟</p>
-      <label><input type="radio" name="q2" value="السنة السابعة للهجرة"> السنة السابعة للهجرة</label>
-      <label><input type="radio" name="q2" value="السنة التاسعة للهجرة"> السنة التاسعة للهجرة</label>
-      <label><input type="radio" name="q2" value="السنة العاشرة للهجرة"> السنة العاشرة للهجرة</label>
+      <p>1. من هو الصحابي الذي قال له النبي ﷺ: "لو قلت بسم الله، لرفعتك الملائكة والناس ينظرون"؟</p>
+      <label><input type="radio" name="q1" value="الزبير بن العوام"> الزبير بن العوام</label>
+      <label><input type="radio" name="q1" value="طلحة بن عبيد الله"> طلحة بن عبيد الله</label>
+      <label><input type="radio" name="q1" value="عبد الله بن مسعود"> عبد الله بن مسعود</label>
     </div>
 
     <div class="question">
-      <p>3. من كتب الصلح بين النبي ﷺ وبين المشركين يوم الحديبية؟</p>
-      <label><input type="radio" name="q3" value="علي بن أبي طالب"> علي بن أبي طالب</label>
-      <label><input type="radio" name="q3" value="عمر بن الخطاب"> عمر بن الخطاب</label>
-      <label><input type="radio" name="q3" value="عثمان بن عفان"> عثمان بن عفان</label>
+      <p>2. في أي موقف قال النبي ﷺ: "أنا النبي لا كذب، أنا ابن عبد المطلب"؟</p>
+      <label><input type="radio" name="q2" value="غزوة بدر"> غزوة بدر</label>
+      <label><input type="radio" name="q2" value="فتح مكة"> فتح مكة</label>
+      <label><input type="radio" name="q2" value="غزوة حُنين"> غزوة حُنين</label>
     </div>
 
     <div class="question">
-      <p>4. فكرة حفر الخندق في غزوة الأحزاب (الخندق) تعود إلى الصحابي:</p>
-      <label><input type="radio" name="q4" value="سلمان الفارسي"> سلمان الفارسي</label>
-      <label><input type="radio" name="q4" value="أبو بكر الصديق"> أبو بكر الصديق</label>
-      <label><input type="radio" name="q4" value="الزبير بن العوام"> الزبير بن العوام</label>
+      <p>3. من هي الصحابية التي أشارت على النبي ﷺ في صلح الحديبية بأن لا يُكلم أحدًا، بل يبدأ بنحر بُدنِه؟</p>
+      <label><input type="radio" name="q3" value="أم سلمة"> أم سلمة</label>
+      <label><input type="radio" name="q3" value="عائشة"> عائشة</label>
+      <label><input type="radio" name="q3" value="حفصة"> حفصة</label>
+    </div>
+
+    <div class="question">
+      <p>4. بعد استشهاد القادة الثلاثة في غزوة مؤتة، من تولى قيادة الجيش؟</p>
+      <label><input type="radio" name="q4" value="سعد بن أبي وقاص"> سعد بن أبي وقاص</label>
+      <label><input type="radio" name="q4" value="خالد بن الوليد"> خالد بن الوليد</label>
+      <label><input type="radio" name="q4" value="أبو عبيدة بن الجراح"> أبو عبيدة بن الجراح</label>
     </div>
 
     <button onclick="checkAnswers()">تحقق من الإجابات</button>
@@ -143,31 +158,31 @@
 
   <script>
     const correctAnswers = {
-      q1: "غزوة المريسيع",
-      q2: "السنة التاسعة للهجرة",
-      q3: "علي بن أبي طالب",
-      q4: "سلمان الفارسي"
+      q1: "طلحة بن عبيد الله",
+      q2: "غزوة حُنين",
+      q3: "أم سلمة",
+      q4: "خالد بن الوليد"
     };
 
     function checkAnswers() {
       let resultHTML = "";
-      let allCorrect = true;
-
-      for (let q in correctAnswers) {
+      for (let i = 1; i <= 4; i++) {
+        const q = `q${i}`;
         const selected = document.querySelector(`input[name="${q}"]:checked`);
         if (selected) {
           if (selected.value === correctAnswers[q]) {
-            resultHTML += `✅ ${q}: <span class="correct">صحيح</span><br>`;
+            resultHTML += `✅ سؤال ${i}: <span class="correct">إجابة صحيحة</span><br>`;
           } else {
-            resultHTML += `❌ ${q}: <span class="wrong">خطأ</span><br>`;
-            allCorrect = false;
+            resultHTML += `❌ سؤال ${i}: <span class="wrong">إجابة خاطئة</span><br>`;
           }
         } else {
-          resultHTML += `❌ ${q}: <span class="wrong">لم يتم اختيار إجابة</span><br>`;
-          allCorrect = false;
+          resultHTML += `❌ سؤال ${i}: <span class="wrong">لم يتم اختيار إجابة</span><br>`;
         }
       }
-
+      const username = document.getElementById("username").value.trim();
+      if (username) {
+        resultHTML = `<strong>👤 الاسم:</strong> ${username}<br><br>` + resultHTML;
+      }
       document.getElementById("result").innerHTML = resultHTML;
       document.getElementById("note").style.display = "block";
     }
